@@ -1,10 +1,16 @@
 package com.educandoweb.course.entities;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name = "tb_user") // tb_user pois se fosse so user iria dar conflito com uma ja existen
 public class User implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)// Id gerado automaticamente
     private Long id;
     private String name;
     private String email;
