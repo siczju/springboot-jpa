@@ -28,6 +28,11 @@ public class OrderItem implements Serializable {
         id.setProduct(product);
     }
 
+    public Double getSubTotal(){
+        return price * quantity;
+    }
+
+
     public Product getProduct(){
         return id.getProduct();
     }
